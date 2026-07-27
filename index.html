@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cayuga County IDA — Where New York Makes Things</title>
+<meta name="description" content="Concept site: Cayuga County Industrial Development Agency. Sites, incentives, workforce and target industries for companies evaluating Central New York.">
+<meta name="robots" content="noindex, nofollow">
+
+<!-- PROSPECTENGAGE TRACKING SCRIPT — insert client tracking snippet here at launch -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%2307742F'/><path d='M6 21c4-3 6 1 10-2s6 1 10-2' stroke='white' stroke-width='2.6' fill='none' stroke-linecap='round'/></svg>">
+
+<style>
+:root{
+  --ink:#14201A; --deep:#073D16; --deep2:#0B5222; --brand:#0A8A3D;
+  --action:#07742F; --action-h:#065E26; --gold:#C8901A;
+  --paper:#FFFFFF; --band:#EFF4F0; --tint:#F7FAF8; --hair:#D9E3DB; --muted:#5A6B62;
+  --maxw:1180px; --r:14px;
+  --shadow:0 1px 2px rgba(7,61,22,.06), 0 8px 28px rgba(7,61,22,.08);
+  --shadow-lg:0 2px 6px rgba(7,61,22,.08), 0 22px 60px rgba(7,61,22,.16);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:132px}
+html,body{overflow-x:clip} /* safety net: nothing should ever scroll the page sideways */
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:Inter,"Proxima Nova","Segoe UI",system-ui,-apple-system,sans-serif;
+  font-size:17px; line-height:1.62; -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%}
+h1,h2,h3,h4{line-height:1.14; margin:0; letter-spacing:-.022em; font-weight:800}
+h2{font-size:clamp(1.85rem,3.4vw,2.7rem)}
+h3{font-size:1.22rem; font-weight:700; letter-spacing:-.014em}
+p{margin:0 0 1em}
+a{color:var(--action); text-underline-offset:3px}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px}
+.eyebrow{
+  font-size:.775rem; font-weight:800; letter-spacing:.15em; text-transform:uppercase;
+  color:var(--brand); margin:0 0 14px
+}
+.lede{font-size:1.11rem; color:var(--muted); max-width:66ch}
+section{padding:88px 0}
+.band{background:var(--band)}
+.tint{background:var(--tint)}
+.sec-head{max-width:70ch; margin-bottom:44px}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  background:var(--action); color:#fff; border:0; cursor:pointer;
+  font:inherit; font-weight:700; font-size:1.02rem; letter-spacing:-.01em;
+  padding:16px 34px; border-radius:999px; text-decoration:none;
+  box-shadow:0 4px 16px rgba(7,116,47,.28); transition:transform .18s, box-shadow .18s, background .18s;
+}
+.btn:hover{background:var(--action-h); transform:translateY(-2px); box-shadow:0 10px 30px rgba(7,116,47,.36)}
+.btn:focus-visible{outline:3px solid var(--gold); outline-offset:3px}
+.btn-ghost{
+  background:transparent; color:#fff; border:1.5px solid rgba(255,255,255,.5);
+  box-shadow:none; padding:15px 30px; font-size:.97rem
+}
+.btn-ghost:hover{background:rgba(255,255,255,.12); border-color:#fff}
+.cta-center{display:flex; justify-content:center; width:100%}
+@keyframes pulse{0%,100%{box-shadow:0 4px 16px rgba(7,116,47,.28)}50%{box-shadow:0 4px 16px rgba(7,116,47,.28),0 0 0 12px rgba(7,116,47,.10)}}
+.btn-pulse{animation:pulse 3.4s ease-in-out infinite}
+
+/* ---------- demo ribbon ---------- */
+.ribbon{
+  background:var(--gold); color:#241a02; font-size:.79rem; font-weight:700;
+  letter-spacing:.01em; text-align:center; padding:8px 20px; position:relative; z-index:70
+}
+.ribbon b{font-weight:900}
+
+/* ---------- header ---------- */
+header{
+  position:sticky; top:0; z-index:60; background:rgba(255,255,255,.93);
+  backdrop-filter:saturate(150%) blur(12px); border-bottom:1px solid var(--hair);
+}
+.nav{display:flex; align-items:center; gap:26px; height:70px}
+.brand{display:flex; align-items:center; gap:11px; text-decoration:none; color:var(--ink); flex-shrink:0}
+.brand-mark{width:38px; height:38px; border-radius:9px; background:linear-gradient(140deg,var(--brand),var(--deep)); display:grid; place-items:center; flex-shrink:0}
+.brand-name{font-weight:900; font-size:1.02rem; letter-spacing:-.03em; line-height:1.1}
+.brand-name span{display:block; font-size:.66rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--muted)}
+.nav-links{display:flex; gap:24px; margin-left:auto}
+.nav-links a{color:var(--ink); text-decoration:none; font-weight:600; font-size:.92rem; padding:6px 0; border-bottom:2px solid transparent}
+.nav-links a:hover{color:var(--action); border-bottom-color:var(--action)}
+.nav-tools{display:flex; align-items:center; gap:14px}
+.nav-phone{color:var(--muted); font-weight:700; font-size:.9rem; text-decoration:none; white-space:nowrap}
+.nav-phone:hover{color:var(--action)}
+.btn-sm{padding:11px 22px; font-size:.9rem}
+.search-wrap{position:relative}
+.search-btn{
+  width:38px; height:38px; border-radius:9px; border:1px solid var(--hair); background:#fff;
+  cursor:pointer; display:grid; place-items:center; color:var(--muted)
+}
+.search-btn:hover{border-color:var(--action); color:var(--action)}
+.search-pop{
+  position:absolute; right:0; top:48px; width:min(430px,84vw); background:#fff;
+  border:1px solid var(--hair); border-radius:var(--r); box-shadow:var(--shadow-lg); padding:12px; display:none
+}
+.search-pop.open{display:block}
+.search-pop input{
+  width:100%; padding:12px 14px; border:1px solid var(--hair); border-radius:9px;
+  font:inherit; font-size:.95rem; outline:none
+}
+.search-pop input:focus{border-color:var(--action)}
+.search-res{max-height:320px; overflow:auto; margin-top:8px}
+.search-res button{
+  display:block; width:100%; text-align:left; background:none; border:0; cursor:pointer;
+  padding:10px 12px; border-radius:8px; font:inherit; font-size:.9rem; color:var(--ink)
+}
+.search-res button:hover{background:var(--band)}
+.search-res .r-kind{display:block; font-size:.7rem; text-transform:uppercase; letter-spacing:.09em; color:var(--brand); font-weight:800}
+.burger{display:none; width:38px; height:38px; border:1px solid var(--hair); background:#fff; border-radius:9px; cursor:pointer}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative; overflow:hidden; color:#fff; padding:104px 0 0;
+  background:linear-gradient(158deg,#0B5222 0%,#073D16 48%,#052C10 100%);
+}
+.mesh{position:absolute; inset:0; pointer-events:none; opacity:.55}
+.mesh i{position:absolute; border-radius:50%; filter:blur(64px); display:block}
+.mesh i:nth-child(1){width:520px;height:520px;background:#12B455;top:-160px;left:-90px;animation:float1 20s ease-in-out infinite}
+.mesh i:nth-child(2){width:430px;height:430px;background:#0A8A3D;bottom:-150px;right:-60px;animation:float2 25s ease-in-out infinite}
+.mesh i:nth-child(3){width:330px;height:330px;background:#C8901A;top:34%;right:24%;opacity:.35;animation:float1 30s ease-in-out infinite reverse}
+@keyframes float1{0%,100%{transform:translate(0,0)}50%{transform:translate(50px,40px)}}
+@keyframes float2{0%,100%{transform:translate(0,0)}50%{transform:translate(-46px,-34px)}}
+.hero .wrap{position:relative; z-index:2}
+.hero-in{max-width:860px; margin:0 auto; text-align:center}
+.hero .eyebrow{color:#8FE3AC}
+.hero h1{font-size:clamp(2.5rem,6vw,4.15rem); font-weight:900; letter-spacing:-.038em; margin-bottom:22px}
+.hero h1 em{font-style:normal; color:#8FE3AC}
+.hero-sub{font-size:1.16rem; color:rgba(255,255,255,.88); max-width:62ch; margin:0 auto 36px}
+.hero-btns{display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:16px}
+.hero-note{font-size:.85rem; color:rgba(255,255,255,.6)}
+.statstrip{
+  position:relative; z-index:2; margin-top:74px;
+  border-top:1px solid rgba(255,255,255,.16); background:rgba(0,0,0,.16)
+}
+.statgrid{display:grid; grid-template-columns:repeat(4,1fr)}
+.stat{padding:30px 22px; text-align:center; border-right:1px solid rgba(255,255,255,.11)}
+.stat:last-child{border-right:0}
+.stat b{display:block; font-size:clamp(1.7rem,3.3vw,2.4rem); font-weight:900; letter-spacing:-.035em; color:#fff; line-height:1}
+.stat span{display:block; margin-top:8px; font-size:.82rem; font-weight:700; color:#9FE7BA; letter-spacing:.01em}
+.stat small{display:block; margin-top:5px; font-size:.72rem; color:rgba(255,255,255,.55); line-height:1.4}
+
+/* ---------- cards / industries ---------- */
+.grid{display:grid; gap:22px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.card{
+  background:#fff; border:1px solid var(--hair); border-radius:var(--r); padding:28px;
+  box-shadow:var(--shadow); transition:transform .22s, box-shadow .22s, border-color .22s;
+  display:flex; flex-direction:column
+}
+.card:hover{transform:translateY(-5px); box-shadow:var(--shadow-lg); border-color:#B9D2C1}
+.ico{
+  width:46px; height:46px; border-radius:11px; display:grid; place-items:center; margin-bottom:16px;
+  background:linear-gradient(140deg,rgba(10,138,61,.14),rgba(7,61,22,.10)); color:var(--action)
+}
+.card h3{margin-bottom:9px}
+.card p{font-size:.945rem; color:var(--muted); margin-bottom:18px}
+.more{
+  margin-top:auto; background:none; border:0; padding:0; cursor:pointer; font:inherit;
+  font-weight:800; font-size:.9rem; color:var(--action); display:inline-flex; align-items:center; gap:7px
+}
+.more:hover{gap:11px; color:var(--action-h)}
+.more span{transition:transform .18s}
+
+/* ---------- sites ---------- */
+.site-card{position:relative}
+.badge{
+  display:inline-block; font-size:.66rem; font-weight:900; letter-spacing:.1em; text-transform:uppercase;
+  padding:4px 10px; border-radius:999px; margin-bottom:12px
+}
+.b-live{background:rgba(10,138,61,.13); color:var(--action)}
+.b-sample{background:rgba(200,144,26,.16); color:#8A6008}
+.kv{display:flex; gap:10px; font-size:.86rem; padding:7px 0; border-top:1px solid var(--hair)}
+.kv dt{color:var(--muted); min-width:78px; font-weight:600}
+.kv dd{margin:0; font-weight:700}
+
+/* ---------- location ---------- */
+.loc{display:grid; grid-template-columns:1.05fr .95fr; gap:52px; align-items:center}
+.maparea{background:#fff; border:1px solid var(--hair); border-radius:var(--r); padding:20px; box-shadow:var(--shadow)}
+.maparea svg{width:100%; height:auto; display:block}
+.js-motion .draw{stroke-dasharray:1000; stroke-dashoffset:1000; transition:stroke-dashoffset 1.9s ease}
+.js-motion .revealed .draw{stroke-dashoffset:0}
+.dist{list-style:none; margin:0; padding:0}
+.dist li{display:flex; align-items:center; gap:14px; padding:11px 0; border-bottom:1px solid var(--hair)}
+.dist .c{font-weight:700; min-width:130px; font-size:.95rem}
+.dist .bar{flex:1; height:7px; background:var(--band); border-radius:4px; overflow:hidden}
+.dist .bar i{display:block; height:100%; width:0; background:linear-gradient(90deg,var(--brand),var(--action)); border-radius:4px; transition:width 1.1s cubic-bezier(.2,.7,.3,1)}
+.dist .m{font-weight:800; font-size:.88rem; color:var(--muted); min-width:62px; text-align:right}
+
+/* ---------- workforce / incentives / employers ---------- */
+.wf{display:grid; grid-template-columns:repeat(4,1fr); gap:18px}
+.wf div{background:#fff; border:1px solid var(--hair); border-radius:var(--r); padding:24px}
+.wf b{display:block; font-size:1.45rem; font-weight:900; letter-spacing:-.03em; color:var(--deep); text-wrap:balance}
+.wf span{display:block; font-size:.9rem; font-weight:700; margin-top:6px}
+.wf small{display:block; font-size:.8rem; color:var(--muted); margin-top:4px}
+.acc{border:1px solid var(--hair); border-radius:var(--r); overflow:hidden; background:#fff}
+.acc details{border-bottom:1px solid var(--hair)}
+.acc details:last-child{border-bottom:0}
+.acc summary{
+  cursor:pointer; padding:19px 24px; font-weight:700; font-size:1rem; list-style:none;
+  display:flex; justify-content:space-between; align-items:center; gap:16px
+}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:"+"; font-size:1.4rem; font-weight:400; color:var(--action); flex-shrink:0}
+.acc details[open] summary::after{content:"–"}
+.acc summary:hover{background:var(--tint)}
+.acc .body{padding:0 24px 22px; font-size:.95rem; color:var(--muted); max-width:80ch}
+.emp{display:grid; grid-template-columns:repeat(5,1fr); gap:14px}
+.emp div{background:#fff; border:1px solid var(--hair); border-radius:11px; padding:18px 16px; text-align:center}
+.emp b{display:block; font-size:.92rem; font-weight:800; letter-spacing:-.012em}
+.emp span{display:block; font-size:.76rem; color:var(--muted); margin-top:4px}
+.emp small{display:block; font-size:.7rem; color:var(--brand); font-weight:700; margin-top:6px}
+
+/* ---------- modal ---------- */
+.modal{
+  position:fixed; inset:0; z-index:90; background:rgba(7,32,16,.62); backdrop-filter:blur(4px);
+  display:none; align-items:center; justify-content:center; padding:24px
+}
+.modal.open{display:flex}
+.modal-box{
+  background:#fff; border-radius:18px; max-width:720px; width:100%; max-height:86vh; overflow:auto;
+  box-shadow:0 30px 90px rgba(0,0,0,.4); animation:pop .26s cubic-bezier(.2,.8,.3,1)
+}
+@keyframes pop{from{opacity:0; transform:translateY(18px) scale(.985)}to{opacity:1; transform:none}}
+.modal-head{padding:32px 36px 20px; border-bottom:1px solid var(--hair); position:relative}
+.modal-head h3{font-size:1.75rem; font-weight:900; letter-spacing:-.03em}
+.modal-body{padding:26px 36px 34px}
+.modal-body p{font-size:1rem; color:#33443B}
+.modal-body h4{font-size:.78rem; text-transform:uppercase; letter-spacing:.12em; color:var(--brand); margin:26px 0 12px}
+.modal-body ul{margin:0; padding-left:20px}
+.modal-body li{margin-bottom:8px; font-size:.96rem; color:#33443B}
+.x{
+  position:absolute; top:20px; right:22px; width:36px; height:36px; border-radius:50%;
+  border:1px solid var(--hair); background:#fff; cursor:pointer; font-size:1.2rem; color:var(--muted); line-height:1
+}
+.x:hover{background:var(--band); color:var(--ink)}
+
+/* ---------- chat ---------- */
+.chatsec{background:linear-gradient(158deg,#0B5222,#073D16 60%,#052C10); color:#fff}
+.chatsec .eyebrow{color:#8FE3AC}
+.chatsec h2{color:#fff}
+.chatsec .lede{color:rgba(255,255,255,.85)}
+.chatwrap{max-width:760px; margin:36px auto 0}
+.chatbox{background:#fff; border-radius:18px; box-shadow:0 24px 70px rgba(0,0,0,.3); overflow:hidden; color:var(--ink)}
+.chat-top{display:flex; align-items:center; gap:12px; padding:16px 22px; border-bottom:1px solid var(--hair); background:var(--tint)}
+.chat-av{width:36px; height:36px; border-radius:50%; background:linear-gradient(140deg,var(--brand),var(--deep)); display:grid; place-items:center; color:#fff; font-weight:900; font-size:.85rem}
+.chat-top b{font-size:.95rem; display:block}
+.chat-top span{font-size:.76rem; color:var(--muted)}
+.dot{width:8px; height:8px; border-radius:50%; background:#22C55E; margin-left:auto; box-shadow:0 0 0 4px rgba(34,197,94,.16)}
+.log{height:360px; overflow-y:auto; padding:22px; display:flex; flex-direction:column; gap:14px; background:#fff}
+.msg{max-width:82%; padding:13px 17px; border-radius:16px; font-size:.94rem; line-height:1.55; white-space:pre-wrap}
+.msg.bot{background:var(--band); border-bottom-left-radius:5px; align-self:flex-start}
+.msg.me{background:var(--action); color:#fff; border-bottom-right-radius:5px; align-self:flex-end}
+.msg.sys{background:#FFF7E6; border:1px solid #F0DDB0; font-size:.82rem; color:#6B5210; align-self:stretch; max-width:100%; border-radius:10px}
+.chips{display:flex; flex-wrap:wrap; gap:8px; padding:0 22px 16px; background:#fff}
+.chip{
+  background:#fff; border:1px solid var(--hair); border-radius:999px; padding:8px 15px;
+  font:inherit; font-size:.82rem; font-weight:600; cursor:pointer; color:var(--ink)
+}
+.chip:hover{border-color:var(--action); color:var(--action); background:var(--tint)}
+.chat-in{display:flex; gap:10px; padding:16px 18px; border-top:1px solid var(--hair); background:var(--tint)}
+.chat-in input{flex:1; border:1px solid var(--hair); border-radius:999px; padding:13px 20px; font:inherit; font-size:.94rem; outline:none; background:#fff}
+.chat-in input:focus{border-color:var(--action)}
+.send{width:46px; height:46px; border-radius:50%; border:0; background:var(--action); color:#fff; cursor:pointer; display:grid; place-items:center; flex-shrink:0}
+.send:hover{background:var(--action-h)}
+.typing{display:flex; gap:4px; padding:15px 18px}
+.typing i{width:7px; height:7px; border-radius:50%; background:var(--muted); animation:bounce 1.3s infinite}
+.typing i:nth-child(2){animation-delay:.18s}
+.typing i:nth-child(3){animation-delay:.36s}
+@keyframes bounce{0%,60%,100%{opacity:.3; transform:translateY(0)}30%{opacity:1; transform:translateY(-5px)}}
+
+/* floating bubble */
+.fab{
+  position:fixed; bottom:24px; right:24px; z-index:80; width:60px; height:60px; border-radius:50%;
+  background:var(--action); color:#fff; border:0; cursor:pointer; display:grid; place-items:center;
+  box-shadow:0 10px 34px rgba(7,116,47,.44); transition:transform .2s
+}
+.fab:hover{transform:scale(1.07)}
+.fab-panel{
+  position:fixed; bottom:96px; right:24px; z-index:80; width:min(392px,calc(100vw - 40px));
+  border-radius:18px; overflow:hidden; box-shadow:0 26px 70px rgba(0,0,0,.32); display:none; background:#fff
+}
+.fab-panel.open{display:block}
+.fab-panel .log{height:320px}
+
+/* ---------- footer ---------- */
+footer{background:#052C10; color:rgba(255,255,255,.72); padding:76px 0 34px}
+.foot-cta{text-align:center; padding-bottom:56px; border-bottom:1px solid rgba(255,255,255,.13); margin-bottom:44px}
+.foot-cta h2{color:#fff; margin-bottom:14px}
+.foot-cta p{color:rgba(255,255,255,.78); max-width:56ch; margin:0 auto 28px}
+.foot-grid{display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:40px; margin-bottom:44px}
+footer h4{font-size:.75rem; text-transform:uppercase; letter-spacing:.13em; color:#8FE3AC; margin:0 0 14px; font-weight:800}
+footer a{color:rgba(255,255,255,.78); text-decoration:none}
+footer a:hover{color:#fff}
+.foot-links{list-style:none; margin:0; padding:0}
+.foot-links li{margin-bottom:8px; font-size:.92rem}
+.colophon{
+  border-top:1px solid rgba(255,255,255,.13); padding-top:26px; font-size:.8rem;
+  color:rgba(255,255,255,.5); display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap
+}
+.pe-credit{background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.13); border-radius:12px; padding:18px 22px; font-size:.84rem; color:rgba(255,255,255,.8)}
+.pe-credit b{color:#fff}
+
+/* ---------- reveal ----------
+   The hidden state is applied only when JS has confirmed IntersectionObserver
+   support, so content is never stranded invisible. */
+.js-motion .rv{opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.3,1)}
+.js-motion .rv.revealed{opacity:1; transform:none}
+
+/* ---------- responsive ---------- */
+@media (max-width:980px){
+  .nav-links{display:none}
+  .burger{display:block}
+  .g3,.emp{grid-template-columns:repeat(2,1fr)}
+  .loc{grid-template-columns:1fr; gap:34px}
+  .wf{grid-template-columns:repeat(2,1fr)}
+  .statgrid{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-right:0}
+  .stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid rgba(255,255,255,.11)}
+  .foot-grid{grid-template-columns:1fr}
+  .nav-phone{display:none}
+}
+@media (max-width:620px){
+  section{padding:60px 0}
+  .wrap{padding:0 18px}
+  .g3,.g2,.emp{grid-template-columns:1fr}
+  .wf{grid-template-columns:1fr}
+  .statgrid{grid-template-columns:1fr}
+  .stat{border-right:0; border-bottom:1px solid rgba(255,255,255,.11)}
+  .modal-head,.modal-body{padding-left:22px; padding-right:22px}
+  .hero{padding-top:64px}
+  /* The header row cannot fit brand + search + CTA + burger at this width.
+     The hero and footer both carry the primary CTA, so drop it here. */
+  .nav{gap:12px}
+  .nav .btn-sm{display:none}
+  .nav-tools{gap:10px}
+  .brand-name{font-size:.92rem}
+  .brand-name span{font-size:.6rem}
+  .ribbon{font-size:.7rem; padding:7px 14px}
+  .fab{bottom:16px; right:16px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none !important; transition:none !important}
+  .js-motion .rv{opacity:1; transform:none}
+  .js-motion .draw{stroke-dashoffset:0}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<div class="ribbon">
+  <b>CONCEPT SITE</b> — Prepared by Camoin Associates &amp; ProspectEngage® for CCIDA review. Not an official Cayuga County IDA website. Sample content shown for demonstration.
+</div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="21" height="21" viewBox="0 0 32 32" fill="none"><path d="M5 20c4-3.4 6.3 1.2 10.5-2.2S22 15.5 27 12" stroke="#fff" stroke-width="2.8" stroke-linecap="round"/><path d="M5 26c4-3.4 6.3 1.2 10.5-2.2S22 21.5 27 18" stroke="#8FE3AC" stroke-width="2.2" stroke-linecap="round"/><circle cx="24" cy="8" r="3.2" fill="#C8901A"/></svg>
+      </span>
+      <span class="brand-name">Cayuga County IDA<span>Auburn, New York</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#industries">Industries</a>
+      <a href="#sites">Sites &amp; Buildings</a>
+      <a href="#location">Location</a>
+      <a href="#incentives">Incentives</a>
+      <a href="#ask">Ask Us</a>
+    </nav>
+    <div class="nav-tools">
+      <div class="search-wrap">
+        <button class="search-btn" id="searchBtn" aria-label="Search this site" aria-expanded="false">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6" stroke-linecap="round"/></svg>
+        </button>
+        <div class="search-pop" id="searchPop">
+          <input id="searchInput" type="search" placeholder="Search incentives, sites, industries…" autocomplete="off">
+          <div class="search-res" id="searchRes"></div>
+        </div>
+      </div>
+      <a class="nav-phone" href="tel:+13156127775">(315) 612-7775</a>
+      <a class="btn btn-sm" href="#ask">Talk to Us</a>
+      <button class="burger" id="burger" aria-label="Menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ======================= HERO ======================= -->
+<div class="hero" id="top">
+  <div class="mesh" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <div class="hero-in">
+      <p class="eyebrow">Cayuga County · Central New York · Finger Lakes</p>
+      <h1>Where New York <em>makes things</em>.</h1>
+      <p class="hero-sub">The state's number-one agricultural county, a steel mill, a plastics cluster, and a $270 million dairy processing campus — all within thirty minutes of Syracuse and directly on Interstate 90.</p>
+      <div class="hero-btns">
+        <a class="btn btn-pulse" href="#ask">Start a Confidential Conversation</a>
+        <a class="btn btn-ghost" href="#sites">See Available Sites</a>
+      </div>
+      <p class="hero-note">Confidential. No obligation. Answered by the people who run the incentives.</p>
+    </div>
+  </div>
+  <div class="statstrip">
+    <div class="wrap">
+      <div class="statgrid" id="statgrid"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================= INDUSTRIES ======================= -->
+<section id="industries">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">Target Industries</p>
+      <h2>Five sectors already operating here.</h2>
+      <p class="lede">Not an aspirational list. Each of these is anchored by companies producing in Cayuga County today — which means the supply chain, the permits and the trained workforce already exist.</p>
+    </div>
+    <div class="grid g3" id="indGrid"></div>
+  </div>
+</section>
+
+<!-- ======================= SITES ======================= -->
+<section id="sites" class="band">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">Sites &amp; Buildings</p>
+      <h2>Shovel-ready ground and an Opportunity Zone.</h2>
+      <p class="lede" id="sitesNote"></p>
+    </div>
+    <div class="grid g2" id="siteGrid"></div>
+  </div>
+</section>
+
+<!-- ======================= LOCATION ======================= -->
+<section id="location">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">Location &amp; Logistics</p>
+      <h2>On the Thruway, inside the Syracuse labor market.</h2>
+    </div>
+    <div class="loc">
+      <div class="maparea rv" id="mapArea">
+        <svg viewBox="0 0 520 340" role="img" aria-label="Driving distances from Auburn, New York to major markets">
+          <defs>
+            <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#0A8A3D"/><stop offset="1" stop-color="#073D16"/>
+            </linearGradient>
+          </defs>
+          <rect width="520" height="340" fill="#F7FAF8" rx="10"/>
+          <!-- radiating routes -->
+          <g stroke="url(#lg)" stroke-width="2.2" fill="none" stroke-linecap="round" opacity=".75">
+            <path class="draw" d="M258 176 L352 108"/>
+            <path class="draw" d="M258 176 L286 268"/>
+            <path class="draw" d="M258 176 L142 122"/>
+            <path class="draw" d="M258 176 L58 168"/>
+            <path class="draw" d="M258 176 L436 214"/>
+            <path class="draw" d="M258 176 L200 44"/>
+            <path class="draw" d="M258 176 L410 300"/>
+            <path class="draw" d="M258 176 L474 92"/>
+          </g>
+          <!-- I-90 corridor -->
+          <path d="M20 158 C130 140 190 190 258 176 C340 158 420 196 500 178" stroke="#C8901A" stroke-width="3.4" fill="none" stroke-dasharray="9 7" opacity=".85"/>
+          <text x="34" y="146" font-size="11" font-weight="800" fill="#8A6008" font-family="Inter,sans-serif">I-90 · NYS THRUWAY</text>
+          <!-- destination nodes -->
+          <g font-family="Inter,sans-serif" font-size="10.5" font-weight="700" fill="#5A6B62">
+            <circle cx="352" cy="108" r="5" fill="#0A8A3D"/><text x="362" y="106">Syracuse · 26 mi</text>
+            <circle cx="286" cy="268" r="5" fill="#0A8A3D"/><text x="296" y="272">Ithaca · 37 mi</text>
+            <circle cx="142" cy="122" r="5" fill="#0A8A3D"/><text x="60" y="112">Rochester · 65 mi</text>
+            <circle cx="58" cy="168" r="5" fill="#0A8A3D"/><text x="24" y="190">Buffalo · 140</text>
+            <circle cx="436" cy="214" r="5" fill="#0A8A3D"/><text x="404" y="234">Albany · 150</text>
+            <circle cx="200" cy="44" r="5" fill="#0A8A3D"/><text x="150" y="34">Toronto · 230</text>
+            <circle cx="410" cy="300" r="5" fill="#0A8A3D"/><text x="360" y="320">New York · 265</text>
+            <circle cx="474" cy="92" r="5" fill="#0A8A3D"/><text x="404" y="80">Boston · 310</text>
+          </g>
+          <!-- origin -->
+          <circle cx="258" cy="176" r="13" fill="#07742F" opacity=".18"/>
+          <circle cx="258" cy="176" r="7.5" fill="#07742F"/>
+          <text x="258" y="205" text-anchor="middle" font-size="12" font-weight="900" fill="#073D16" font-family="Inter,sans-serif">AUBURN, NY</text>
+        </svg>
+      </div>
+      <div>
+        <ul class="dist rv" id="distList"></ul>
+        <p style="font-size:.8rem;color:var(--muted);margin-top:14px" id="distNote"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= WORKFORCE ======================= -->
+<section class="tint">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">Workforce</p>
+      <h2>40,000 workers in a county of 74,000.</h2>
+      <p class="lede">Because Auburn sits inside the Syracuse labor market, employers recruit well past the county line — while paying Central New York wages and Central New York land prices.</p>
+    </div>
+    <div class="wf rv" id="wfGrid"></div>
+  </div>
+</section>
+
+<!-- ======================= INCENTIVES ======================= -->
+<section id="incentives">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">Incentives &amp; Financing</p>
+      <h2>What the IDA can actually do for a project.</h2>
+      <p class="lede">CCIDA is a public-benefit corporation. These are the statutory tools available to an approved project — the specific package depends on jobs, investment and structure.</p>
+    </div>
+    <div class="acc rv" id="incAcc"></div>
+  </div>
+</section>
+
+<!-- ======================= EMPLOYERS ======================= -->
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">Who Is Already Here</p>
+      <h2>The neighbors you would be joining.</h2>
+    </div>
+    <div class="emp rv" id="empGrid"></div>
+  </div>
+</section>
+
+<!-- ======================= ASK ======================= -->
+<section id="ask" class="chatsec">
+  <div class="wrap">
+    <div class="sec-head rv" style="text-align:center;margin-left:auto;margin-right:auto">
+      <p class="eyebrow">Ask Us Anything</p>
+      <h2>Get a straight answer, right now.</h2>
+      <p class="lede" style="margin:0 auto">Incentives, sites, utilities, workforce, timelines. Ask the way you would ask a person — because on the live site, a person gets the transcript.</p>
+    </div>
+    <div class="chatwrap rv">
+      <div class="chatbox">
+        <div class="chat-top">
+          <span class="chat-av">CC</span>
+          <span><b>Cayuga Assistant</b><span>Cayuga County IDA · Auburn, NY</span></span>
+          <span class="dot" aria-hidden="true"></span>
+        </div>
+        <div class="log" id="log" aria-live="polite"></div>
+        <div class="chips" id="chips"></div>
+        <form class="chat-in" id="chatForm">
+          <input id="chatInput" type="text" placeholder="Ask about incentives, sites, workforce…" autocomplete="off" aria-label="Your question">
+          <button class="send" type="submit" aria-label="Send">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= FOOTER ======================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot-cta">
+      <h2>Tell us what you need to build.</h2>
+      <p>Confidential conversations with the people who actually approve the incentives. No forms routed into a void.</p>
+      <div class="cta-center"><a class="btn" href="#ask">Start a Confidential Conversation</a></div>
+    </div>
+    <div class="foot-grid">
+      <div>
+        <h4>Cayuga County IDA</h4>
+        <p style="font-size:.92rem">188 Genesee Street<br>P.O. Box 262<br>Auburn, NY 13021</p>
+        <p style="font-size:.92rem"><a href="tel:+13156127775">(315) 612-7775</a><br><a href="mailto:director@cayugacountyida.org">director@cayugacountyida.org</a></p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul class="foot-links">
+          <li><a href="#industries">Target Industries</a></li>
+          <li><a href="#sites">Sites &amp; Buildings</a></li>
+          <li><a href="#location">Location &amp; Logistics</a></li>
+          <li><a href="#incentives">Incentives</a></li>
+          <li><a href="#ask">Ask Us Anything</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Staff</h4>
+        <ul class="foot-links" id="footContacts"></ul>
+      </div>
+    </div>
+    <div class="pe-credit">
+      <b>About this page.</b> This is a design concept prepared by <b>Camoin Associates</b> and <b>ProspectEngage®</b> to show CCIDA what a business-attraction-focused website could look like. Content was assembled from public sources in July 2026; items marked ⚑ and records labeled SAMPLE require CCIDA confirmation before any launch. The assistant below runs on an on-page knowledge base for demonstration — the production version connects to a live model and emails every transcript to CCIDA staff.
+    </div>
+    <div class="colophon">
+      <span>Concept — not an official CCIDA publication.</span>
+      <span>Camoin Associates · ProspectEngage® · camoinassociates.com</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ======================= MODAL ======================= -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h3 id="modalTitle"></h3>
+      <button class="x" id="modalX" aria-label="Close">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<!-- ======================= FLOATING CHAT ======================= -->
+<div class="fab-panel" id="fabPanel">
+  <div class="chatbox" style="border-radius:0">
+    <div class="chat-top">
+      <span class="chat-av">CC</span>
+      <span><b>Cayuga Assistant</b><span>Ask us anything</span></span>
+      <span class="dot" aria-hidden="true"></span>
+    </div>
+    <div class="log" id="log2" aria-live="polite"></div>
+    <form class="chat-in" id="chatForm2">
+      <input id="chatInput2" type="text" placeholder="Ask a question…" autocomplete="off" aria-label="Your question">
+      <button class="send" type="submit" aria-label="Send">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+      </button>
+    </form>
+  </div>
+</div>
+<button class="fab" id="fab" aria-label="Open chat">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-3.9-.9L3 21l1.9-4.1A8.4 8.4 0 0 1 12 3.1a8.4 8.4 0 0 1 9 8.4Z"/></svg>
+</button>
+
+<script src="kb.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
