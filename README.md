@@ -18,7 +18,14 @@ Cayuga County Development Corporation.
 
 - Partner agency **role descriptions** in `kb.js` `partners[]`. These are inferred from each
   agency's general type and are flagged `confirm: true`. Each partner should sign off on
-  its own wording.
-- Partner agency **website URLs**. Only the CCIDA URL is populated; the other three render
-  a "link to be supplied" placeholder rather than an invented destination.
+  its own wording. The ⚑ marks the description, not the link.
 - Whether all four agencies have **agreed to participate** and to the routing rules.
+
+Partner **URLs are client-supplied and verified to load** (Aug 2026). The SBDC was supplied
+as `http://`; the site serves `https` and redirects, so the secure URL is used.
+
+## Caching
+
+`index.html` loads `kb.js` and `app.js` with a `?v=` query string. These three files must
+always be served as a matching set — a returning visitor with old assets cached against new
+markup gets an empty partner section. **Bump `?v=` on every content or rendering change.**

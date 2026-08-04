@@ -27,9 +27,10 @@ window.CCIDA_KB = {
   },
 
   /* -------------------------------------------------------------- partners
-     The routing module. Every role description below is inferred from the
-     agency's general type and is flagged for CCIDA confirmation. Only the
-     CCIDA URL is known; partner URLs are to be supplied by CCIDA. */
+     The routing module. All four URLs are client-supplied and verified to
+     load (Aug 2026). The role descriptions are still inferred from each
+     agency's general type and remain flagged for confirmation — the ⚑ marks
+     the wording, not the link. */
   partnersNote: "Collaborate Cayuga is a shared front door, not a replacement for the agencies behind it. Tell us what you need and we point you at the right desk — or, if you would rather choose yourself, start here.",
   partners: [
     {
@@ -49,7 +50,7 @@ window.CCIDA_KB = {
       role: "City of Auburn projects",
       blurb: "The City of Auburn's industrial development agency, handling incentives and project financing for development inside the city limits — including the northwest quadrant Qualified Opportunity Zone.",
       bestFor: "Projects sited within the City of Auburn.",
-      url: null,
+      url: "https://takerootinauburn.org/",
       confirm: true
     },
     {
@@ -59,7 +60,9 @@ window.CCIDA_KB = {
       role: "Small business & startup advising",
       blurb: "No-cost, confidential advising for small businesses and startups: business planning, financing readiness, market research and government contracting support.",
       bestFor: "Small business owners, startups and entrepreneurs.",
-      url: null,
+      // Client supplied http://; the site serves https and redirects to it, so
+      // link the secure URL rather than sending visitors through a downgrade.
+      url: "https://www.northcentralsbdc.org/",
       confirm: true
     },
     {
@@ -69,7 +72,7 @@ window.CCIDA_KB = {
       role: "Business lending & gap financing",
       blurb: "Local development corporation providing loan capital and gap financing for small and mid-sized business projects that fall outside conventional bank lending.",
       bestFor: "Businesses seeking loan capital, working capital or gap financing.",
-      url: null,
+      url: "https://www.cayugacounty.gov/440/Cayuga-County-Development-Corporation",
       confirm: true
     }
   ],
