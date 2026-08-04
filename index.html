@@ -679,7 +679,12 @@ footer a:hover{color:#fff}
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-3.9-.9L3 21l1.9-4.1A8.4 8.4 0 0 1 12 3.1a8.4 8.4 0 0 1 9 8.4Z"/></svg>
 </button>
 
-<script src="kb.js"></script>
-<script src="app.js"></script>
+<!-- Version query strings are required, not cosmetic: index.html and these two
+     files must always be served as a matching set. Anyone who opened the earlier
+     CCIDA-branded concept site has kb.js/app.js cached, and without a new URL
+     they get new markup driven by old content - the partner section renders
+     empty. Bump ?v= on every content or rendering change. -->
+<script src="kb.js?v=2"></script>
+<script src="app.js?v=2"></script>
 </body>
 </html>
