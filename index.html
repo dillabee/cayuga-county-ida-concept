@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cayuga County IDA — Where New York Makes Things</title>
-<meta name="description" content="Concept site: Cayuga County Industrial Development Agency. Sites, incentives, workforce and target industries for companies evaluating Central New York.">
+<title>Collaborate Cayuga — One Front Door for Business in Cayuga County, NY</title>
+<meta name="description" content="Concept site: Collaborate Cayuga, the shared front door for economic development in Cayuga County, New York. Sites, incentives, workforce, target industries and routing to the right local agency.">
 <meta name="robots" content="noindex, nofollow">
 
 <!-- PROSPECTENGAGE TRACKING SCRIPT — insert client tracking snippet here at launch -->
@@ -170,6 +170,39 @@ header{
 .more:hover{gap:11px; color:var(--action-h)}
 .more span{transition:transform .18s}
 
+/* ---------- partners ---------- */
+.pgrid{display:grid; grid-template-columns:repeat(4,1fr); gap:18px}
+.pcard{
+  background:#fff; border:1px solid var(--hair); border-radius:var(--r); padding:24px 22px;
+  box-shadow:var(--shadow); display:flex; flex-direction:column;
+  transition:transform .22s, box-shadow .22s, border-color .22s
+}
+.pcard:hover{transform:translateY(-5px); box-shadow:var(--shadow-lg); border-color:#B9D2C1}
+.pcard .abbr{
+  display:inline-grid; place-items:center; width:auto; min-width:54px; height:32px; padding:0 12px;
+  border-radius:8px; background:linear-gradient(140deg,var(--brand),var(--deep)); color:#fff;
+  font-size:.78rem; font-weight:900; letter-spacing:.06em; margin-bottom:14px
+}
+.pcard.host .abbr{background:linear-gradient(140deg,var(--gold),#8A6008)}
+.pcard h3{font-size:1.04rem; margin-bottom:5px}
+.pcard .role{font-size:.75rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--brand); margin-bottom:11px}
+.pcard p{font-size:.9rem; color:var(--muted); margin-bottom:14px}
+.pcard .bestfor{
+  font-size:.85rem; color:var(--ink); background:var(--tint); border-left:3px solid var(--brand);
+  border-radius:0 8px 8px 0; padding:10px 13px; margin:0 0 16px
+}
+.pcard .bestfor b{display:block; font-size:.68rem; text-transform:uppercase; letter-spacing:.1em; color:var(--brand); margin-bottom:3px}
+.plink{
+  margin-top:auto; font-weight:800; font-size:.88rem; color:var(--action);
+  display:inline-flex; align-items:center; gap:7px; text-decoration:none
+}
+.plink:hover{gap:11px}
+.plink.pending{color:var(--muted); font-weight:700; font-size:.8rem}
+.host-note{
+  margin-top:26px; font-size:.86rem; color:var(--muted); background:#fff; border:1px solid var(--hair);
+  border-radius:var(--r); padding:16px 20px
+}
+
 /* ---------- sites ---------- */
 .site-card{position:relative}
 .badge{
@@ -319,7 +352,7 @@ footer a:hover{color:#fff}
 @media (max-width:980px){
   .nav-links{display:none}
   .burger{display:block}
-  .g3,.emp{grid-template-columns:repeat(2,1fr)}
+  .g3,.emp,.pgrid{grid-template-columns:repeat(2,1fr)}
   .loc{grid-template-columns:1fr; gap:34px}
   .wf{grid-template-columns:repeat(2,1fr)}
   .statgrid{grid-template-columns:repeat(2,1fr)}
@@ -331,7 +364,7 @@ footer a:hover{color:#fff}
 @media (max-width:620px){
   section{padding:60px 0}
   .wrap{padding:0 18px}
-  .g3,.g2,.emp{grid-template-columns:1fr}
+  .g3,.g2,.emp,.pgrid{grid-template-columns:1fr}
   .wf{grid-template-columns:1fr}
   .statgrid{grid-template-columns:1fr}
   .stat{border-right:0; border-bottom:1px solid rgba(255,255,255,.11)}
@@ -358,7 +391,7 @@ footer a:hover{color:#fff}
 <body>
 
 <div class="ribbon">
-  <b>CONCEPT SITE</b> — Prepared by Camoin Associates &amp; ProspectEngage® for CCIDA review. Not an official Cayuga County IDA website. Sample content shown for demonstration.
+  <b>CONCEPT SITE</b> — Prepared by Camoin Associates &amp; ProspectEngage® for CCIDA review. Not an official Cayuga County IDA or partner agency website. Sample content shown for demonstration.
 </div>
 
 <header>
@@ -367,12 +400,12 @@ footer a:hover{color:#fff}
       <span class="brand-mark" aria-hidden="true">
         <svg width="21" height="21" viewBox="0 0 32 32" fill="none"><path d="M5 20c4-3.4 6.3 1.2 10.5-2.2S22 15.5 27 12" stroke="#fff" stroke-width="2.8" stroke-linecap="round"/><path d="M5 26c4-3.4 6.3 1.2 10.5-2.2S22 21.5 27 18" stroke="#8FE3AC" stroke-width="2.2" stroke-linecap="round"/><circle cx="24" cy="8" r="3.2" fill="#C8901A"/></svg>
       </span>
-      <span class="brand-name">Cayuga County IDA<span>Auburn, New York</span></span>
+      <span class="brand-name">Collaborate Cayuga<span>Cayuga County, New York</span></span>
     </a>
     <nav class="nav-links">
+      <a href="#partners">Our Agencies</a>
       <a href="#industries">Industries</a>
       <a href="#sites">Sites &amp; Buildings</a>
-      <a href="#location">Location</a>
       <a href="#incentives">Incentives</a>
       <a href="#ask">Ask Us</a>
     </nav>
@@ -401,13 +434,13 @@ footer a:hover{color:#fff}
   <div class="wrap">
     <div class="hero-in">
       <p class="eyebrow">Cayuga County · Central New York · Finger Lakes</p>
-      <h1>Where New York <em>makes things</em>.</h1>
+      <h1>Ask once. <em>The whole county answers.</em></h1>
       <p class="hero-sub">The state's number-one agricultural county, a steel mill, a plastics cluster, and a $270 million dairy processing campus — all within thirty minutes of Syracuse and directly on Interstate 90.</p>
       <div class="hero-btns">
         <a class="btn btn-pulse" href="#ask">Start a Confidential Conversation</a>
-        <a class="btn btn-ghost" href="#sites">See Available Sites</a>
+        <a class="btn btn-ghost" href="#partners">Find the Right Agency</a>
       </div>
-      <p class="hero-note">Confidential. No obligation. Answered by the people who run the incentives.</p>
+      <p class="hero-note">Confidential. No obligation. Answered by the people who run the incentives and write the loans.</p>
     </div>
   </div>
   <div class="statstrip">
@@ -416,6 +449,19 @@ footer a:hover{color:#fff}
     </div>
   </div>
 </div>
+
+<!-- ======================= PARTNER AGENCIES ======================= -->
+<section id="partners" class="tint">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">One Front Door</p>
+      <h2>Four agencies. One place to start.</h2>
+      <p class="lede" id="partnersNote"></p>
+    </div>
+    <div class="pgrid" id="partnerGrid"></div>
+    <p class="host-note rv" id="hostNote"></p>
+  </div>
+</section>
 
 <!-- ======================= INDUSTRIES ======================= -->
 <section id="industries">
@@ -537,13 +583,13 @@ footer a:hover{color:#fff}
     <div class="sec-head rv" style="text-align:center;margin-left:auto;margin-right:auto">
       <p class="eyebrow">Ask Us Anything</p>
       <h2>Get a straight answer, right now.</h2>
-      <p class="lede" style="margin:0 auto">Incentives, sites, utilities, workforce, timelines. Ask the way you would ask a person — because on the live site, a person gets the transcript.</p>
+      <p class="lede" style="margin:0 auto">Incentives, sites, utilities, workforce, financing, timelines — or simply "who should I be talking to?" Ask the way you would ask a person, and we will route you to the agency that handles it. On the live site, a person gets the transcript.</p>
     </div>
     <div class="chatwrap rv">
       <div class="chatbox">
         <div class="chat-top">
           <span class="chat-av">CC</span>
-          <span><b>Cayuga Assistant</b><span>Cayuga County IDA · Auburn, NY</span></span>
+          <span><b>Collaborate Cayuga Assistant</b><span>Cayuga County, New York</span></span>
           <span class="dot" aria-hidden="true"></span>
         </div>
         <div class="log" id="log" aria-live="polite"></div>
@@ -564,18 +610,19 @@ footer a:hover{color:#fff}
   <div class="wrap">
     <div class="foot-cta">
       <h2>Tell us what you need to build.</h2>
-      <p>Confidential conversations with the people who actually approve the incentives. No forms routed into a void.</p>
+      <p>Confidential conversations with the people who actually approve the incentives and write the loans. One inquiry, routed to the right agency. No forms into a void.</p>
       <div class="cta-center"><a class="btn" href="#ask">Start a Confidential Conversation</a></div>
     </div>
     <div class="foot-grid">
       <div>
-        <h4>Cayuga County IDA</h4>
-        <p style="font-size:.92rem">188 Genesee Street<br>P.O. Box 262<br>Auburn, NY 13021</p>
+        <h4>Collaborate Cayuga</h4>
+        <p style="font-size:.92rem">Hosted by the Cayuga County Industrial Development Agency<br>188 Genesee Street<br>P.O. Box 262<br>Auburn, NY 13021</p>
         <p style="font-size:.92rem"><a href="tel:+13156127775">(315) 612-7775</a><br><a href="mailto:director@cayugacountyida.org">director@cayugacountyida.org</a></p>
       </div>
       <div>
         <h4>Explore</h4>
         <ul class="foot-links">
+          <li><a href="#partners">Our Agencies</a></li>
           <li><a href="#industries">Target Industries</a></li>
           <li><a href="#sites">Sites &amp; Buildings</a></li>
           <li><a href="#location">Location &amp; Logistics</a></li>
@@ -584,15 +631,17 @@ footer a:hover{color:#fff}
         </ul>
       </div>
       <div>
-        <h4>Staff</h4>
+        <h4>Partner Agencies</h4>
+        <ul class="foot-links" id="footPartners"></ul>
+        <h4 style="margin-top:22px">Staff</h4>
         <ul class="foot-links" id="footContacts"></ul>
       </div>
     </div>
     <div class="pe-credit">
-      <b>About this page.</b> This is a design concept prepared by <b>Camoin Associates</b> and <b>ProspectEngage®</b> to show CCIDA what a business-attraction-focused website could look like. Content was assembled from public sources in July 2026; items marked ⚑ and records labeled SAMPLE require CCIDA confirmation before any launch. The assistant below runs on an on-page knowledge base for demonstration — the production version connects to a live model and emails every transcript to CCIDA staff.
+      <b>About this page.</b> This is a design concept prepared by <b>Camoin Associates</b> and <b>ProspectEngage®</b> to show CCIDA what <b>Collaborate Cayuga</b> — a shared front door for the county's economic development agencies — could look like. Content was assembled from public sources in July 2026; items marked ⚑ and records labeled SAMPLE require confirmation before any launch. Partner agency roles and links shown here are illustrative and have not yet been reviewed by the Auburn IDA, the North Central SBDC or the Cayuga County Development Corporation. The assistant below runs on an on-page knowledge base for demonstration — the production version connects to a live model and emails every transcript to the routed agency.
     </div>
     <div class="colophon">
-      <span>Concept — not an official CCIDA publication.</span>
+      <span>Concept — not an official CCIDA or partner agency publication.</span>
       <span>Camoin Associates · ProspectEngage® · camoinassociates.com</span>
     </div>
   </div>
@@ -614,7 +663,7 @@ footer a:hover{color:#fff}
   <div class="chatbox" style="border-radius:0">
     <div class="chat-top">
       <span class="chat-av">CC</span>
-      <span><b>Cayuga Assistant</b><span>Ask us anything</span></span>
+      <span><b>Collaborate Cayuga</b><span>Ask us anything</span></span>
       <span class="dot" aria-hidden="true"></span>
     </div>
     <div class="log" id="log2" aria-live="polite"></div>

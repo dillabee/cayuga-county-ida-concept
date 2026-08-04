@@ -1,5 +1,5 @@
 /* ============================================================================
-   Cayuga County IDA — Concept Site
+   Collaborate Cayuga — Concept Site
    Renders every section from window.CCIDA_KB, drives motion, search, modals,
    and the on-page assistant.
    ========================================================================== */
@@ -35,6 +35,27 @@
       final + "</b><span>" + s.label + "</span><small>" + s.note + "</small>";
     sg.appendChild(d);
   });
+
+  // Partner agencies — the routing module
+  $("#partnersNote").textContent = KB.partnersNote;
+  const pg = $("#partnerGrid");
+  KB.partners.forEach((p) => {
+    const c = el("article", "pcard rv" + (p.host ? " host" : ""));
+    // Only agencies whose URL CCIDA has supplied get a live link; the rest show
+    // an explicit placeholder rather than a dead or invented destination.
+    const link = p.url
+      ? '<a class="plink" href="' + p.url + '" target="_blank" rel="noopener">Visit ' + p.abbr + " <span>→</span></a>"
+      : '<span class="plink pending">⚑ Website link to be supplied</span>';
+    c.innerHTML = '<span class="abbr">' + p.abbr + "</span>" +
+      "<h3>" + p.name + flag(p) + "</h3>" +
+      '<p class="role">' + p.role + "</p>" +
+      "<p>" + p.blurb + "</p>" +
+      '<p class="bestfor"><b>Start here if</b>' + p.bestFor + "</p>" + link;
+    pg.appendChild(c);
+  });
+  $("#hostNote").innerHTML = "<b>How this works.</b> Collaborate Cayuga is hosted and operated by the " +
+    KB.meta.host + ". Inquiries submitted here are logged in one shared system and routed to the agency that handles them, so nothing is lost in a handoff. " +
+    "As the county moves to a formal one-stop model, this page is designed to become the single landing page for economic development in Cayuga County.";
 
   // Industries
   const ig = $("#indGrid");
@@ -94,6 +115,14 @@
   const eg = $("#empGrid");
   KB.employers.forEach((e) => {
     eg.appendChild(el("div", "", "<b>" + e.name + "</b><span>" + e.sector + "</span>" + (e.note ? "<small>" + e.note + "</small>" : "")));
+  });
+
+  // Footer partner list
+  const fp = $("#footPartners");
+  KB.partners.forEach((p) => {
+    fp.appendChild(el("li", "", p.url
+      ? "<a href='" + p.url + "' target='_blank' rel='noopener'>" + p.name + "</a>"
+      : p.name));
   });
 
   // Footer contacts
@@ -184,6 +213,7 @@
 
   /* -------------------------------------------------------------- search */
   const searchIndex = [];
+  KB.partners.forEach((p) => searchIndex.push({ kind: "Agency", title: p.name, text: p.role + " " + p.blurb + " " + p.bestFor + " " + p.abbr, act: () => { location.hash = "#partners"; } }));
   KB.industries.forEach((i) => searchIndex.push({ kind: "Industry", title: i.name, text: i.blurb + " " + i.body.join(" ") + " " + i.lookingFor.join(" "), act: () => document.querySelector('[data-ind="' + i.id + '"]').click() }));
   KB.incentives.forEach((i) => searchIndex.push({ kind: "Incentive", title: i.name, text: i.body, act: () => { location.hash = "#incentives"; } }));
   KB.sites.forEach((s) => searchIndex.push({ kind: "Site", title: s.name, text: s.notes + " " + s.type + " " + s.zoning, act: () => { location.hash = "#sites"; } }));
@@ -221,7 +251,7 @@
     });
   });
 
-  $("#burger").addEventListener("click", () => { location.hash = "#industries"; });
+  $("#burger").addEventListener("click", () => { location.hash = "#partners"; });
 
   /* ------------------------------------------------------------- the bot */
   // Retrieval corpus: every KB fact the assistant is permitted to state.
@@ -248,6 +278,16 @@
   CORPUS.push({
     key: "workforce labor population employees hiring training college skills",
     body: KB.workforce.map((w) => w.label + ": " + w.value + " (" + w.note + ")").join(". ") + ".", w: 1
+  });
+  KB.partners.forEach((p) => CORPUS.push({
+    key: p.name + " " + p.abbr + " agency partner organization route refer " + p.role + " " + p.bestFor,
+    body: p.name + " (" + p.abbr + ") — " + p.role + ". " + p.blurb + " Start here if " + p.bestFor, w: 1
+  }));
+  CORPUS.push({
+    key: "agencies partners organizations who does what one stop shop routing directory collaborate cayuga",
+    body: "Collaborate Cayuga brings four agencies together in one place: " +
+      KB.partners.map((p) => p.name + " (" + p.role.toLowerCase() + ")").join("; ") +
+      ". Tell me what you are trying to do and I will point you at the right one.", w: 1.2
   });
   CORPUS.push({
     key: "contact call email phone talk reach speak person staff director address office",
@@ -285,8 +325,8 @@
     return best && best.cov >= 0.5 && best.sc >= 2.8 ? best.c.body : null;
   }
 
-  const FALLBACK = "I don't have that in my notes, and I would rather not guess at it. Michael Miller, our CEO and Executive Director, can answer directly — director@cayugacountyida.org or (315) 612-7775. What else can I tell you about sites, incentives, workforce or our target industries?";
-  const GREET = "Hi — I'm the Cayuga County IDA assistant. Ask me about incentives, available sites, workforce, or the industries we're targeting.\n\nOne note up front: this is a demonstration page, and on the live site a copy of our conversation goes to CCIDA staff so a real person can follow up.";
+  const FALLBACK = "I don't have that in my notes, and I would rather not guess at it. Michael Miller, CEO and Executive Director of the Cayuga County IDA, can answer directly — director@cayugacountyida.org or (315) 612-7775. What else can I tell you about sites, incentives, workforce, our target industries, or which of our agencies handles what?";
+  const GREET = "Hi — I'm the Collaborate Cayuga assistant. Four economic development agencies work through this one front door, so you can start here whether you're siting a plant, opening a storefront, or looking for financing.\n\nAsk me about incentives, available sites, workforce, target industries — or just tell me what you're trying to do and I'll point you at the right agency.\n\nOne note up front: this is a demonstration page, and on the live site a copy of our conversation goes to the routed agency so a real person can follow up.";
 
   function reply(q) {
     const s = q.toLowerCase().trim();
@@ -295,11 +335,11 @@
     if (/confidential|nda|private|anonym/.test(s)) return KB.faq.find((f) => /confidential/i.test(f.q)).a;
     if (/^who are you|^what are you|^who am i (talking|speaking)/.test(s) ||
         /\b(are you|you a|is this a)\b.*\b(bot|ai|robot|human|real|person)\b/.test(s) || /^(bot|ai)\?$/.test(s))
-      return "I'm an AI assistant for the Cayuga County IDA — not a person. I answer from CCIDA's own material, and anything I can't confirm goes to Michael Miller, our Executive Director.";
+      return "I'm an AI assistant for Collaborate Cayuga — not a person. I answer from the participating agencies' own material, and anything I can't confirm goes to Michael Miller, Executive Director of the Cayuga County IDA.";
     return retrieve(q) || FALLBACK;
   }
 
-  const SUGGESTIONS = ["What incentives can I get?", "Do you have available buildings?", "How far is Syracuse?", "Tell me about the dairy sector", "What's the workforce like?", "Who do I talk to?"];
+  const SUGGESTIONS = ["Which agency should I talk to?", "What incentives can I get?", "Do you have available buildings?", "I need financing for a small business", "What's the workforce like?", "Tell me about the dairy sector"];
 
   function makeChat(logId, formId, inputId, withChips) {
     const log = document.getElementById(logId);

@@ -1,7 +1,11 @@
 /* ============================================================================
-   Cayuga County IDA — Concept Site Knowledge Base
+   Collaborate Cayuga — Concept Site Knowledge Base
    Single source of truth. Drives page sections, industry modals, header search,
    and the assistant. Edit content HERE only.
+
+   Collaborate Cayuga is the shared front door for Cayuga County's economic
+   development agencies. CCIDA hosts and operates the platform; partner agencies
+   are surfaced through the routing module in the `partners` block below.
 
    Content assembled from public sources, retrieved July 2026.
    Items tagged confirm:true are shown with a ⚑ marker and must be verified by
@@ -10,9 +14,10 @@
 
 window.CCIDA_KB = {
   meta: {
-    org: "Cayuga County Industrial Development Agency",
-    short: "CCIDA",
-    tagline: "Where New York Makes Things",
+    org: "Collaborate Cayuga",
+    short: "Collaborate Cayuga",
+    host: "Cayuga County Industrial Development Agency",
+    tagline: "Ask Once. The Whole County Answers.",
     retrieved: "July 2026",
     address: "188 Genesee Street, Auburn, NY 13021",
     mailing: "P.O. Box 262, Auburn, NY 13021",
@@ -20,6 +25,54 @@ window.CCIDA_KB = {
     email: "director@cayugacountyida.org",
     ctaLabel: "Start a Confidential Conversation"
   },
+
+  /* -------------------------------------------------------------- partners
+     The routing module. Every role description below is inferred from the
+     agency's general type and is flagged for CCIDA confirmation. Only the
+     CCIDA URL is known; partner URLs are to be supplied by CCIDA. */
+  partnersNote: "Collaborate Cayuga is a shared front door, not a replacement for the agencies behind it. Tell us what you need and we point you at the right desk — or, if you would rather choose yourself, start here.",
+  partners: [
+    {
+      id: "ccida",
+      name: "Cayuga County IDA",
+      abbr: "CCIDA",
+      role: "County-wide incentives & site development",
+      blurb: "Payment in lieu of taxes agreements, sales and use tax exemptions, mortgage recording tax exemptions and tax-exempt bond financing for projects across Cayuga County, plus shovel-ready site identification.",
+      bestFor: "Companies building, expanding or relocating a facility anywhere in Cayuga County.",
+      url: "https://www.cayugacountyida.org",
+      host: true
+    },
+    {
+      id: "aida",
+      name: "Auburn IDA",
+      abbr: "AIDA",
+      role: "City of Auburn projects",
+      blurb: "The City of Auburn's industrial development agency, handling incentives and project financing for development inside the city limits — including the northwest quadrant Qualified Opportunity Zone.",
+      bestFor: "Projects sited within the City of Auburn.",
+      url: null,
+      confirm: true
+    },
+    {
+      id: "sbdc",
+      name: "North Central SBDC",
+      abbr: "SBDC",
+      role: "Small business & startup advising",
+      blurb: "No-cost, confidential advising for small businesses and startups: business planning, financing readiness, market research and government contracting support.",
+      bestFor: "Small business owners, startups and entrepreneurs.",
+      url: null,
+      confirm: true
+    },
+    {
+      id: "ccdc",
+      name: "Cayuga County Development Corporation",
+      abbr: "CCDC",
+      role: "Business lending & gap financing",
+      blurb: "Local development corporation providing loan capital and gap financing for small and mid-sized business projects that fall outside conventional bank lending.",
+      bestFor: "Businesses seeking loan capital, working capital or gap financing.",
+      url: null,
+      confirm: true
+    }
+  ],
 
   /* ---------------------------------------------------------------- stats */
   stats: [
@@ -181,9 +234,24 @@ window.CCIDA_KB = {
   /* ------------------------------------------------------------------ faq */
   faq: [
     {
+      q: "What is Collaborate Cayuga?",
+      aliases: "collaborate cayuga what is this site platform one stop shop front door portal",
+      a: "Collaborate Cayuga is the shared front door for economic development in Cayuga County. Rather than making you work out which agency handles what, it puts the county's economic development organizations in one place and routes you to the right one. Four agencies participate today: the Cayuga County IDA, the Auburn IDA, the North Central SBDC and the Cayuga County Development Corporation. The platform is hosted and operated by the Cayuga County IDA."
+    },
+    {
+      q: "Which agency should I be talking to?",
+      aliases: "who should i contact which agency route right person direct refer partner organizations agencies list",
+      a: "It depends on what you need. Building, expanding or relocating a facility anywhere in the county — Cayuga County IDA. A project inside the City of Auburn — Auburn IDA. You are a small business or a startup and want advising — North Central SBDC. You need loan capital or gap financing — Cayuga County Development Corporation. If you are not sure, describe your project and we will point you at the right desk."
+    },
+    {
+      q: "Are these agencies merging into a one-stop shop?",
+      aliases: "one stop shop consolidate merge merger single agency future long term combine",
+      a: "Cayuga County's economic development agencies are working toward a formal one-stop model. Collaborate Cayuga is the first step: a shared platform the agencies can use together now, ahead of that consolidation. Over time the intent is for this to become the single landing page for economic development in the county."
+    },
+    {
       q: "What does the CCIDA actually do?",
-      aliases: "ida agency organization mission purpose role who are you what do you do help support",
-      a: "The Cayuga County Industrial Development Agency is a public-benefit corporation. We help businesses locate, grow and expand in Cayuga County using financial incentives — PILOT agreements, sales tax and mortgage recording tax exemptions, and tax-exempt bond financing — along with technical assistance and help finding a site."
+      aliases: "ida agency organization mission purpose role what do you do help support",
+      a: "The Cayuga County Industrial Development Agency is a public-benefit corporation and the host of Collaborate Cayuga. It helps businesses locate, grow and expand in Cayuga County using financial incentives — PILOT agreements, sales tax and mortgage recording tax exemptions, and tax-exempt bond financing — along with technical assistance and help finding a site."
     },
     {
       q: "What incentives can I get?",
@@ -221,7 +289,7 @@ window.CCIDA_KB = {
     },
     {
       q: "Who do I talk to?",
-      a: "Michael Miller, CEO and Executive Director, at director@cayugacountyida.org or (315) 612-7775. The office is at 188 Genesee Street in Auburn."
+      a: "For a location or expansion project, Michael Miller, CEO and Executive Director of the Cayuga County IDA, at director@cayugacountyida.org or (315) 612-7775. The office is at 188 Genesee Street in Auburn. If your question is really a small business, city-of-Auburn or financing question, we will hand you to the Auburn IDA, the North Central SBDC or the Cayuga County Development Corporation rather than making you start over."
     }
   ]
 };
